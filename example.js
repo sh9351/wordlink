@@ -1,0 +1,10 @@
+(async () => {
+    const Wordlink = require('./')
+    const model = new Wordlink()
+    model.add(['Node.js', 'nodeJS'], ['Node.js는 구글의 V8 엔진으로 구성된 자바스크립트 런타임 입니다.'])
+    await model.train()
+    // await model.save('apple.model.json')
+    // model.load(require('fs').readFileSync('apple.model.json', 'utf8'))
+    const answer = await model.answer('NodeJS가 무엇인가요?')
+    console.log(answer)
+})()
