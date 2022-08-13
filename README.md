@@ -3,7 +3,7 @@ Wordlink는 [NLP.js](https://github.com/axa-group/nlp.js/)를 사용하여 복�
 ## Quickstart
 ```js
 // 모델 학습시키기
-const Wordlink = require('wordlink')
+const Wordlink = require('wordlink.js')
 const model = new Wordlink()
 model.add(['Node.js', 'nodeJS'], ['Node.js는 구글의 V8 엔진으로 구성된 자바스크립트 런타임 입니다.'])
 await model.train()
@@ -11,7 +11,7 @@ await model.save('nodejs.model.nlp')
 ```
 ```js
 // 모델 사용하기
-const Wordlink = require('wordlink')
+const Wordlink = require('wordlink.js')
 const model = new Wordlink()
 model.load(fs.readFileSync('nodejs.model.nlp', 'utf8'))
 const answer = await model.answer('NodeJS가 무엇인가요?')
